@@ -8,6 +8,9 @@ This is an example of using Data Redaction on ATP or ADW
 You must first create your ADB instance
 From your ADB instance, download the Oracle Cloud Wallet
 Use SQL Developer to connect
+
+This script is provided free of charge and without warranty.
+Use at your own risk. 
 */
 
 /*******************************************************************************************/
