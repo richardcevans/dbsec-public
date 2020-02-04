@@ -18,11 +18,11 @@ Use at your own risk.
 /*******************************************************************************************/
 
 
-create user redaction_admin identified by Oracle123_Oracle123;
+create user redaction_admin identified by &super_secret_password_here;
 grant connect, resource to redaction_admin;
 grant execute on dbms_redact to redaction_admin with grant option;
 
-create user hr identified by Oracle123_Oracle123;
+create user hr identified by &super_secret_password_here;
 grant resource to hr;
 grant unlimited tablespace to hr;
 
