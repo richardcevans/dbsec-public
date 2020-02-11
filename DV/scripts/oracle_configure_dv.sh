@@ -42,6 +42,10 @@ BEGIN
  END;
 /
 
+-- make sure we have the proper roles for our backup accounts
+grant dv_acctmgr to C##DVACCTMGR_BACKUP container=all;
+grant dv_owner to C##DVOWNER_BACKUP container=all;
+
 -- Enable DV on the CDB
 connect c##dvowner/"Oracle123+"
 show user;
@@ -58,6 +62,9 @@ startup;
 alter pluggable database pdb1 open;
 show pdbs;
 
+connect c##dvowner/"Oracle123+"
+exec dbms_macadm.enable_app_protection;
+
 connect / as sysdba
 select * from dba_dv_status;
 
@@ -71,7 +78,6 @@ BEGIN
    dvacctmgr_uname       => 'C##DVACCTMGR');
  END;
 /
-
 
 -- Enable DV on the PDB1
 connect c##dvowner/"Oracle123+"@pdb1
@@ -91,7 +97,6 @@ connect / as sysdba
 show user;
 show con_name;
 select * from dba_dv_status;
-
 
 -- Verify DV is configured and enabled on the PDB
 connect / as sysdba
