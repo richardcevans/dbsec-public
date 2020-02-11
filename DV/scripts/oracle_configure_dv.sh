@@ -1,7 +1,13 @@
 . /vagrant_config/install.env
 
+#####################################################################################
+#
+#
 # for use with tim hall's vagrant scripts
 # located here: https://github.com/oraclebase/vagrant
+#
+#
+#####################################################################################
 
 echo "******************************************************************************"
 echo "Source the Oracle Enviroment variables." `date`
